@@ -9,8 +9,15 @@ public class Card {
 		this.suit = suit;
 	}
 	
+	public String getName() {
+		return this.name;
+	}
+	
+	public String getSuit() {
+		return this.name;
+	}
+	
 	public String getCard() {
 		return name + "-" + suit;
 	}
-	
 }

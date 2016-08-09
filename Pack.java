@@ -11,13 +11,13 @@ public class Pack {
 	
 	Pack(boolean hasSpecialCard) {
 		
-		cards = new ArrayList<Card>();
+		this.cards = new ArrayList<Card>();
 		
 		initStandardPack();
 		if(hasSpecialCard) {
 			Card sc = new Card("Joker", "-");
-			cards.add(sc);
-			cards.add(sc);
+			this.cards.add(sc);
+			this.cards.add(sc);
 		}
 		
 	}
@@ -27,14 +27,14 @@ public class Pack {
 		for(int i = 0; i < suit.length; ++i) {
 			for(int j = 0; j < face.length; ++j) {
 				Card c = new Card(face[j], suit[i]);
-				cards.add(c);
+				this.cards.add(c);
 			}
 		}
 		
 	}
 	
 	public ArrayList<Card> getCards() {
-		return cards;
+		return this.cards;
 	}
 	
 }
