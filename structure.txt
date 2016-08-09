@@ -1,0 +1,36 @@
+GENERAL STRUCTURE:
+
+class Card {
+	String number;
+	String suit // enum;
+}
+
+class Deck {
+	
+	ArrayList - > Card[52];
+	specialCards
+	Card joker = new Card("Joker","-"); //
+	
+	Deck(specialCards) {
+	}
+	
+	void addCardToDeck();
+	
+	void shuffle();
+	void pickFirst();
+	void pickRandom();
+	
+	void pickNCards();
+	
+}
+
+class PokerPlayer {
+	
+	
+	Card[7] hand;
+	
+	evaluateHand() {
+	}
+
+}
+
