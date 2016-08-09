@@ -10,16 +10,20 @@ public class Pack {
 	private String[] suit = new String[] {"Spade", "Clubs", "Heart", "Diamonds"};
 	
 	Pack(boolean hasSpecialCard) {
+		
+		cards = new ArrayList<Card>();
+		
 		initStandardPack();
 		if(hasSpecialCard) {
 			Card sc = new Card("Joker", "-");
 			cards.add(sc);
 			cards.add(sc);
 		}
+		
 	}
 	
-	public void initStandardPack() {
-	
+	public void initStandardPack() {	
+		
 		for(int i = 0; i < suit.length; ++i) {
 			for(int j = 0; j < face.length; ++j) {
 				Card c = new Card(face[j], suit[i]);
