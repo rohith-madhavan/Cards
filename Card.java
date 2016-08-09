@@ -1,9 +1,10 @@
-package Week_2.day2;
+package cards;
 
 public class Card {
 	private String name;
 	private String suit;
 	private int value;
+	
 	Card(String name, String suit, int value ){
 		this.name = name;
 		this.value = value;
