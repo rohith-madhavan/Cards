@@ -1,7 +1,10 @@
+package cards;
+
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.Map;
 
 public class PokerPlayer {
 
@@ -91,5 +94,64 @@ public class PokerPlayer {
 		return true;
 	}
 	
+	public boolean isOnePair(ArrayList<Card> l){
+		if(noOfPairs(l)==1)
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean isTwoPair(ArrayList<Card> l){
+		if(noOfPairs(l)==2)
+			return true;
+		else
+			return false;
+	}
+	
+	public boolean isThreeOfaKind(ArrayList<Card> l){
+		Map<String, Integer> Map = rankFreq(l);
+		for(String key : Map.keySet()){
+			if(Map.get(key)+ Map.get("Joker") >=3) return true;
+		}
+		return false;
+		
+	}
+	
+	public boolean isFourOfakind(ArrayList<Card> l){
+		Map<String, Integer> Map = rankFreq(l);
+		for(String key : Map.keySet()){
+			if(Map.get(key) + Map.get("Joker") >=4) return true;
+		}
+		
+		return false;
+		
+	}
+	
+	
+	public boolean isFlush(ArrayList<Card> l){
+		Card compare = l.get(0);
+		for(Card c: l){
+			if(!compare.isEqualSuit(c)) return false;
+		}
+		return true;
+	}
+	
+	public int noOfPairs(ArrayList<Card> l){
+		Map<String, Integer> Map = rankFreq(l);
+		int pairs =0;	
+		for(String key : Map.keySet()){
+			if(Map.get(key) ==2) pairs++;
+		}
+		return pairs;
+		
+	}
+	public Map<String , Integer> rankFreq(ArrayList<Card> l){
+		Map<String, Integer> Map = new HashMap<String , Integer> ();
+		for(Card c : l){
+			if(Map.containsKey(c.getName())) Map.put(c.getName(),Map.get(c.getName()) +1);
+			else Map.put(c.getName() ,1);
+		}	
+		return Map;
+	}
 	
 }

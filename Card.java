@@ -36,6 +36,9 @@ public class Card {
 		return other.getSuit().equals(this.getSuit());
 	}
 	
+	public boolean isSpecialCard(){
+		return this.getSuit() == "-";
+	}
 	public String getCard() {
 		return name + "-" + suit;
 	}
