@@ -21,6 +21,21 @@ public class Card {
 		return this.name;
 	}
 	
+	public boolean isEqualCard(Card other) {
+		
+		return other.getCard().equals(this.getCard());
+	}
+	
+	public boolean isEqualName(Card other) {
+		
+		return other.getName().equals(this.getName());
+	}
+	
+	public boolean isEqualSuit(Card other) {
+		
+		return other.getSuit().equals(this.getSuit());
+	}
+	
 	public String getCard() {
 		return name + "-" + suit;
 	}
